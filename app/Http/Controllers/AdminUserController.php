@@ -126,7 +126,7 @@ class AdminUserController extends Controller
 
         return redirect()->route('users.index')->with([
             'flash' => 'success',
-            'message' => 'Successfully deleted user.',
+            'message' => 'تم الحذف بنجاح'',
         ]);
     }
 }
