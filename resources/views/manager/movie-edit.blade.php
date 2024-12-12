@@ -1,7 +1,7 @@
 @extends('manager.layout')
 
 @section('content')
-<h1 class="h3 mb-4 text-gray-800">Edit Movie</h1>
+<h1 class="h3 mb-4 text-gray-800">تعديل فيلم</h1>
 <form action="{{ route('manager.movies.update',$movie) }}"
       method="POST" enctype="multipart/form-data">
     @method('PUT')
@@ -10,14 +10,14 @@
         @include('components.form-input',[
         'name'=>'image',
         'classes'=>'col-6',
-        'label'=>'Poster Image',
+        'label'=>'صورة الفيلم',
         // 'required'=>'required',
         'type'=>'file',
         ])
         @include('components.form-input',[
         'name'=>'title',
         'classes'=>'col-6',
-        'label'=>'Image Title*',
+        'label'=>'عنوان الفيلم',
         'required'=>'required',
         'type'=>'text',
         'value'=>$movie->title,
@@ -26,7 +26,7 @@
     <div class="row">
         @include('components.form-select',[
         'name'=>'category_id',
-        'label'=>'Category*',
+        'label'=>'تنصيف الفيلم',
         'classes'=>'col-6',
         'options'=>$categories,
         'required'=>'required',
@@ -35,7 +35,7 @@
         @include('components.form-input',[
         'name'=>'language',
         'classes'=>'col-6',
-        'label'=>'Movie Language*',
+        'label'=>'لغة الفيلم',
         'required'=>'required',
         'type'=>'text',
         'value'=>$movie->language,
@@ -46,7 +46,7 @@
         @include('components.form-input',[
         'name'=>'rating',
         'classes'=>'col-6',
-        'label'=>'Movie Rating*',
+        'label'=>'تقييم الفيلم',
         'required'=>'required',
         'type'=>'number',
         'value'=>$movie->rating,
@@ -54,7 +54,7 @@
         ])
         @include('components.form-date',[
         'name'=>'release_date',
-        'label'=>'Movie Release Date*',
+        'label'=>'تاريخ إصدار الفيلم',
         'classes'=>'col-6',
         'value'=>$movie->release_date->toDateString(),
         'required'=>'required',
@@ -65,7 +65,7 @@
         @include('components.form-input',[
         'name'=>'director',
         'classes'=>'col-6',
-        'label'=>'Director*',
+        'label'=>'المخرج',
         'required'=>'required',
         'type'=>'text',
         'value'=>$movie->director,
@@ -73,7 +73,7 @@
         @include('components.form-input',[
         'name'=>'maturity_rating',
         'classes'=>'col-6',
-        'label'=>'Maturity Rating*',
+        'label'=>'الفئة العمرية',
         'required'=>'required',
         'type'=>'text',
         'value'=>$movie->maturity_rating,
@@ -82,7 +82,7 @@
     <div class="row">
         @include('components.form-time',[
         'name'=>'running_time',
-        'label'=>'Running Time*',
+        'label'=>'مدة العرض',
         'classes'=>'col-6',
         'value'=>$movie->running_time->format('H:i'),
         'required'=>'required',
@@ -90,7 +90,7 @@
         @include('components.form-textarea',[
         'name'=>'storyline',
         'classes'=>'col-6',
-        'label'=>'Movie Storyline*',
+        'label'=>'نبذة عن الفيلم',
         'required'=>'required',
         'value'=>$movie->storyline,
         ])
@@ -101,7 +101,7 @@
                type="reset">
         <input class="btn btn-success m-2"
                type="submit"
-               value="Update">
+               value="تحديث">
     </div>
 </form>
 @include('components.flash-message')

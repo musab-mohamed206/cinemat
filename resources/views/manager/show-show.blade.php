@@ -1,13 +1,13 @@
 @extends('manager.layout')
 
 @section('content')
-<h1 class="h3 mb-4 text-gray-800">View Show</h1>
+<h1 class="h3 mb-4 text-gray-800">عرض العروض</h1>
 
 <div class="row">
     @include('components.form-input',[
     'name'=>'movie_id',
     'type'=>'text',
-    'label'=>'Movie',
+    'label'=>'الفيلم',
     'classes'=>'col-6',
     'required'=>'disabled',
     'value'=>$show->movie->title,
@@ -15,7 +15,7 @@
     @include('components.form-input',[
     'name'=>'room',
     'type'=>'text',
-    'label'=>'Remaining Seats',
+    'label'=>'المقاعد المتبقية',
     'classes'=>'col-6',
     'required'=>'disabled',
     'value'=>$show->remaining_seats.'/'.$show->room->size,
@@ -26,7 +26,7 @@
     @include('components.form-input',[
     'name'=>'date',
     'type'=>'text',
-    'label'=>'Show Date',
+    'label'=>'تاريخ العرض',
     'classes'=>'col-6',
     'required'=>'disabled',
     'value'=>$show->date->toDateString(),
@@ -34,7 +34,7 @@
     @include('components.form-input',[
     'name'=>'price',
     'type'=>'text',
-    'label'=>'Price',
+    'label'=>'السعر',
     'classes'=>'col-6',
     'required'=>'disabled',
     'value'=>$show->price,
@@ -45,7 +45,7 @@
     @include('components.form-input',[
     'name'=>'start_time',
     'type'=>'text',
-    'label'=>'Start Time',
+    'label'=>'بداية العرض',
     'classes'=>'col-6',
     'required'=>'disabled',
     'value'=>$show->start_time->format('H:i'),
@@ -53,7 +53,7 @@
     @include('components.form-input',[
     'name'=>'end_time',
     'type'=>'text',
-    'label'=>'End Time',
+    'label'=>'نهاية العرض',
     'classes'=>'col-6',
     'required'=>'disabled',
     'value'=>$show->end_time->format('H:i'),
@@ -61,19 +61,19 @@
 </div>
 
 <div class="res-container">
-    <h1>Reservations</h1>
+    <h1>الحجوزات</h1>
     <ul class="showcase">
         <li>
             <div class="seat"></div>
-            <small>Available</small>
+            <small>متاح</small>
         </li>
         <li>
             <div class="seat selected"></div>
-            <small>Selected</small>
+            <small>تم الإختيار</small>
         </li>
         <li>
             <div class="seat sold"></div>
-            <small>Sold</small>
+            <small>غير متاح</small>
         </li>
     </ul>
     <div class="container cinema-container">
@@ -243,17 +243,17 @@ function populateSeats(RoomSize, Reservations) {
     }
 </style>
 <div class="justify-content-center text-center">
-    <button class="btn btn-primary m-2 justify-content-center" onclick="populateUI()">Load Reservations</button>
+    <button class="btn btn-primary m-2 justify-content-center" onclick="populateUI()">تحميل الحجز</button>
 </div>
 <div class="row justify-content-end">
-    <a href="{{ route('manager.shows.edit',$show->id) }}" class="btn btn-warning m-2">Edit</a>
+    <a href="{{ route('manager.shows.edit',$show->id) }}" class="btn btn-warning m-2">تعديل</a>
     <form action="{{ route('manager.shows.destroy',$show->id) }}"
           method="POST">
         @csrf
         @method('DELETE')
         <input class="btn btn-danger text-white m-2"
                type="submit"
-               value="Delete">
+               value="حذف">
     </form>
 </div>
 @include('components.flash-message')

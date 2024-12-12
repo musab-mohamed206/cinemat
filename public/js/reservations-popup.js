@@ -101,11 +101,11 @@ function showTab(n) {
     }
     if (n == (x.length - 1)) {
         if (SignedIn)
-            document.getElementById("nextBtn").innerHTML = "Reserve!";
+            document.getElementById("nextBtn").innerHTML = "!حجز";
         else
             document.getElementById("nextBtn").innerHTML = "Login/Register to reserve";
     } else {
-        document.getElementById("nextBtn").innerHTML = "Next";
+        document.getElementById("nextBtn").innerHTML = "التالي";
     }
 }
 
@@ -177,19 +177,19 @@ function validateForm() {
         formData = {};
         $('#reservation-form').serializeArray().map(function (x) { formData[x.name] = x.value; });
         if (formData['card-num'] == "") {
-            $('#card-number-error').text('Card number can\'t be empty');
+            $('#card-number-error').text('لا يمكن أن يكون رقم البطاقة فارغاً');
             return false;
         } else $('#card-number-error').text('');
         if (formData['name'] == "") {
-            $('#card-name-error').text('Card name can\'t be empty');
+            $('#card-name-error').text('لا يمكن أن يكون اسم البطاقة فارغاً');
             return false;
         } else $('#card-name-error').text('');
         if (formData['exp'] == "") {
-            $('#exp-error').text('Expiry date can\'t be empty');
+            $('#exp-error').text('تاريخ انتهاء الصلاحية لا يمكن أن يكون فارغاً');
             return false;
         } else $('#exp-error').text('');
         if (formData['cvv'] == "") {
-            $('#cvv-error').text('CVV can\'t be empty');
+            $('#cvv-error').text('رقم الحماية لا يمكن أن يكون فارغاً');
             return false;
         } else $('#cvv-error').text('');
         return true;

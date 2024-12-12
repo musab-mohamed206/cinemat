@@ -33,7 +33,7 @@
 
                     <p>{{ Str::limit($movie->storyline, 150, '...') }}</p>
 
-                    <a href="{{ route('movies.show',$movie->id) }}" class="btn btn-main btn-effect">details</a>
+                    <a href="{{ route('movies.show',$movie->id) }}" class="btn btn-main btn-effect">تفاصيل</a>
                 </div>
             </div>
 

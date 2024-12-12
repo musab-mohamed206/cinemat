@@ -4,18 +4,18 @@
 Hello {{ $user->first_name }},
 
 @if( $user->wants_manager )
-Thanks for registering, please wait for the administration to approve your manager account. Until then your account will be a customer account.<br>
-You will receive an email upon approval.<br>
-You can try to log in at the link below.<br>
+شكراً على التسجيل يرجى انتظار موافقة الإدارة على حساب المسؤول الخاص بك حتى ذلك الحين سيكون حسابك كعميل<br>
+ستصلك رسالة بريد إلكتروني بالموافقة على العملية<br>
+يمكنك محاولة تسجيل الدخول على الرابط أدناه<br>
 @else
-Thanks for registering, your account has been created.<br>
-You can now log in at the link below.<br>
+شكراً لتسجيلك تم إنشاء حسابك<br>
+يمكنك الأن تسجيل الدخول من الرابط أدناه<br>
 @endif
 
 @component('mail::button', ['url' => config('app.url').'/login'])
-    Login
+    تسجيل الدخول
 @endcomponent
 
-Thanks, <br>
+شكراً <br>
 {{ config('app.name') }}
 @endcomponent

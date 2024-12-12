@@ -83,7 +83,7 @@ class ManagerMovieController extends Controller
         // redirect with success
         return redirect()->route('manager.movies.edit', $movie)->with([
             'flash' => 'success',
-            'message' => 'Added movie successfully',
+            'message' => 'تمت الإضافة بنجاح',
         ]);
     }
 
@@ -143,7 +143,7 @@ class ManagerMovieController extends Controller
         // redirect to edit page with message
         return redirect()->route('manager.movies.edit', $movie)->with([
             'flash' => 'success',
-            'message' => 'Updated Movie Successfully',
+            'message' => 'تم التحديث بنجاح',
         ]);
     }
 
@@ -159,7 +159,7 @@ class ManagerMovieController extends Controller
 
         return redirect()->route('manager.movies.index')->with([
             'flash' => 'success',
-            'message' => 'Successfully deleted movie.',
+            'message' => 'تم الحذف بنجاح',
         ]);
     }
 }

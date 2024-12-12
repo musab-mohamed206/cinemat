@@ -1,17 +1,16 @@
 @extends('manager.layout')
 
 @section('content')
-<h1 class="h3 mb-0 text-gray-800">Movies</h1>
-<p>Deleting a movie deletes its shows and subsequent reservations.</p>
+<h1 class="h3 mb-0 text-gray-800">الأفلام</h1>
 @if ($movies->isNotEmpty())
 <table class="showtime-table table table-striped table-hover rounded">
     <thead class="thead-dark">
         <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Poster</th>
-            <th scope="col">Title</th>
-            <th scope="col">Category</th>
-            <th scope="col">Rating</th>
+            <th scope="col">الرقم</th>
+            <th scope="col">الواجهة</th>
+            <th scope="col">اسم الفيلم</th>
+            <th scope="col">التنصيف</th>
+            <th scope="col">التقييم</th>
             <th scope="col"></th>
             <th scope="col"></th>
         </tr>
@@ -25,7 +24,7 @@
         <td><i class="fa fa-star"></i>{{ $movie->rating }}</td>
         <td>
             <a href="{{ route('manager.movies.edit',$movie->id) }}"
-               class="btn btn-warning text-white">Edit</a>
+               class="btn btn-warning text-white">تعديل</a>
         </td>
         <td>
             <form action="{{ route('manager.movies.destroy',$movie->id) }}"
@@ -34,7 +33,7 @@
                 @method('DELETE')
                 <input class="btn btn-danger text-white"
                        type="submit"
-                       value="Delete">
+                       value="حذف">
             </form>
         </td>
     </tr>
@@ -42,7 +41,7 @@
 </table>
 @else
 <div class="bg-light p-3 font-weight-bold rounded text-center">
-    There are currently no movies.
+  لايوجد حالياً فيلم
 </div>
 @endif
 @include('components.flash-message')

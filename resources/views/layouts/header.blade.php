@@ -40,22 +40,18 @@
                 <ul class="navbar-nav mx-auto" id="main-menu">
                     <!-- Menu Item -->
                     <li class="nav-item">
-                        <a class="nav-link" href={{ route('home') }}>Home</a>
+                        <a class="nav-link" href={{ route('home') }}>الصفحة الرئيسية</a>
                     </li>
 
                     <!-- Menu Item -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('movies.index') }}">Movies</a>
+                        <a class="nav-link" href="{{ route('movies.index') }}">أفلامنا</a>
                     </li>
 
+                    
                     <!-- Menu Item -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('movies.index') }}">What to Watch?</a>
-                    </li>
-
-                    <!-- Menu Item -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('contact-us') }}">Contact us</a>
+                        <a class="nav-link" href="{{ route('contact-us') }}">تواصل معانا</a>
                     </li>
 
                 </ul>
@@ -78,27 +74,26 @@
                     @auth
                         <li class="nav-item dropdown" style="z-index: 50;">
                             <a href="{{ route('dashboard') }}" class="btn btn-main btn-effect login-btn">
-                                <i class="icon-user"></i>Hello, {{ auth()->user()->first_name }}</a>
+                                <i class="icon-user"></i>مرحباً, {{ auth()->user()->first_name }}</a>
                             <div class="dropdown-content rounded font-weight-normal">
-                                <a href="{{ route('dashboard') }}">My Account</a>
-                                <a href="{{ route('dashboard') }}">My Reservations</a>
+                                <a href="{{ route('dashboard') }}">حسابي</a>
+                                <a href="{{ route('dashboard') }}">الحجوزات</a>
                                 @can('admin')
-                                    <a href="{{ route('admin.dashboard') }}">Admin Dashboard</a>
+                                    <a href="{{ route('admin.dashboard') }}">لوحة تحكم المدير</a>
                                 @endcan
                                 @can('manager')
-                                    <a href="{{ route('manager.dashboard') }}">Manager Dashboard</a>
+                                    <a href="{{ route('manager.dashboard') }}">لوحة تحكم المسؤول</a>
                                 @endcan
                                 <form id="logout_form" method="POST" action="{{ route('logout') }}">
                                     @csrf
-                                    <a href="javascript:{}" onclick="document.getElementById('logout_form').submit();">Log
-                                        Out</a>
+                                    <a href="javascript:{}" onclick="document.getElementById('logout_form').submit();">تسجيل الخروج</a>
                                 </form>
                             </div>
                         </li>
                     @else
                         <li class="nav-item">
                             <a href="{{ route('login') }}" class="btn btn-main btn-effect login-btn">
-                                <i class="icon-user"></i>login</a>
+                                <i class="icon-user"></i>تسجيل الدخول</a>
                         </li>
                     @endauth
 

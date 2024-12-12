@@ -1,14 +1,14 @@
 <div class="container">
-    <h1 class="mt-0 mb-0">My Reservations</h1>
+    <h1 class="mt-0 mb-0">الحجوزات</h1>
     <hr>
     @if ($reservations->isNotEmpty())
         <table class="table table-responsive table-striped table-hover">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">Movie</th>
-                    <th scope="col">Show time</th>
-                    <th scope="col">Seat number</th>
-                    <th scope="col">Show price</th>
+                    <th scope="col">الفيلم</th>
+                    <th scope="col">وقت العرض</th>
+                    <th scope="col">رقم المقعد</th>
+                    <th scope="col">سعر التذكرة</th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -23,7 +23,7 @@
                             <form action="{{ route('reservations.destroy', $reservation->id) }}" method="POST">
                                 @csrf
                                 @method('delete')
-                                <input class="btn btn-second text-white" type="submit" value="Cancel Reservation">
+                                <input class="btn btn-second text-white" type="submit" value="إلغاء الحجز">
                             </form>
                         </td>
                     @endif
@@ -32,7 +32,7 @@
         </table>
     @else
         <div class="bg-light p-3 font-weight-bold rounded text-center">
-            You don't have any future reservations.
+            ليس لديك حجوزات حالياً
         </div>
     @endif
 </div>

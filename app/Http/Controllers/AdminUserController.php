@@ -110,7 +110,7 @@ class AdminUserController extends Controller
 
         return redirect()->route('users.manager-requests')->with([
             'flash' => 'success',
-            'message' => 'Updated user status successfully.',
+            'message' => 'تم التحديث بنجاح',
         ]);
     }
 
@@ -126,7 +126,7 @@ class AdminUserController extends Controller
 
         return redirect()->route('users.index')->with([
             'flash' => 'success',
-            'message' => 'تم الحذف بنجاح'',
+            'message' => 'تم الحذف بنجاح',
         ]);
     }
 }

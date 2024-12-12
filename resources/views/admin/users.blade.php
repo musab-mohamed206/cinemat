@@ -1,14 +1,14 @@
 @extends('admin.layout')
 
 @section('content')
-<h1 class="h3 mb-4 text-gray-800">Users</h1>
+<h1 class="h3 mb-4 text-gray-800">المستخدمين</h1>
 @if ($users->isNotEmpty())
 <table class="showtime-table table table-striped table-hover rounded">
     <thead class="thead-dark">
         <tr>
-            <th scope="col">Username</th>
-            <th scope="col">Role</th>
-            <th scope="col">Email</th>
+            <th scope="col">اسم المستخدم</th>
+            <th scope="col">المنصب</th>
+            <th scope="col">البريدالإلكتروني</th>
             <th scope="col"></th>
         </tr>
     </thead>
@@ -22,12 +22,12 @@
             <form action="{{ route('users.destroy',$user->id) }}" method="POST">
                 @csrf
                 @method('delete')
-                <input class="btn btn-danger text-white" type="submit" value="Delete User">
+                <input class="btn btn-danger text-white" type="submit" value="حذف المستخدم">
             </form>
         </td>
         @else
         <td class="">
-            <button class="btn btn-danger text-white disabled" type="button">Delete User</button>
+            <button class="btn btn-danger text-white disabled" type="button">حذف المستخدم</button>
         </td>
         @endif
     </tr>
@@ -35,7 +35,7 @@
 </table>
 @else
 <div class="bg-light p-3 font-weight-bold rounded text-center">
-    There are currently no users
+   لايوحد مستخدمين حالياً
 </div>
 @endif
 @include('components.flash-message')

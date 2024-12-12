@@ -43,7 +43,7 @@ class UserController extends Controller
         // redirect user to home with flash message
         return redirect('/')->with([
             'flash' => 'success',
-            'message' => $user->wants_manager ? 'Account created, you will remain customer until administration\'s approval.' : 'Your account has been successfully created!',
+            'message' => $user->wants_manager ? 'تم إنشاء حسابك,ستبقى عميل حتى موافقة الإدارة' : '!تم إنشاء حسابك بنجاح ',
         ]);
     }
 

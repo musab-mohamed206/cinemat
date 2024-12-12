@@ -9,10 +9,10 @@
         style="background: url({{ asset('images/branding/posters/movie-collection.webp') }});">
         <div class="container">
             <div class="inner">
-                <h2 class="title">Movies</h2>
+                <h2 class="title">الأفلام</h2>
                 <ol class="breadcrumb">
-                    <li><a href="{{ route('home') }}">Home</a></li>
-                    <li>Movies</li>
+                    <li><a href="{{ route('home') }}">الصفحة الرئيسية</a></li>
+                    <li>الأفلام</li>
                 </ol>
             </div>
         </div>
@@ -43,15 +43,15 @@
 
                 <form method="GET" action="{{ route('movies.index') }}" class="d-flex">
 
-                    <input type="search" name="search" id="search" class="py-1 form-control" placeholder="search"
+                    <input type="search" name="search" id="search" class="py-1 form-control" placeholder="بحث"
                         style="flex-basis: fit-content" value="{{ request('search') }}">
 
                     <div class="px-3 py-3 py-xl-0"></div>
 
                     <div class="d-flex align-items-center">
-                        <label for="category" class="pr-1 text-nowrap">Category:</label>
+                        <label for="category" class="pr-1 text-nowrap">التنصيف</label>
                         <select name="category" id="category" class="py-1">
-                            <option value="" default>All Categories</option>
+                            <option value="" default>كل التصنيفات</option>
                             @foreach (\App\Models\Category::CATEGORIES as $category)
                                 <option value="{{ $category }}"
                                     {{ request('category') == $category ? 'selected' : '' }}>
@@ -64,13 +64,13 @@
                     <div class="px-3 py-3 py-xl-0"></div>
 
                     <div class="d-flex align-items-center">
-                        <label for="sort" class="pr-1 text-nowrap">Sort by: </label>
+                        <label for="sort" class="pr-1 text-nowrap">فرز حسب</label>
                         @php
                             $sortings = [
-                                'default' => 'Default Order',
-                                'top-rated' => 'Top Rated',
-                                'newest' => 'Newest',
-                                'oldest' => 'Oldest',
+                                'default' => 'إفتراضي',
+                                'top-rated' => 'الأعلى تقييم',
+                                'newest' => 'الأحدث',
+                                'oldest' => 'الأقدم',
                             ];
                         @endphp
                         <select name="sort" id="sort" class="py-1">
@@ -84,7 +84,7 @@
 
                     <div class="px-2 py-3 py-xl-0"></div>
 
-                    <input type="submit" value="Filter" class="btn btn-main">
+                    <input type="submit" value="ترشيح" class="btn btn-main">
 
                 </form>
 
@@ -110,7 +110,7 @@
 
 
             @if ($movies->isEmpty())
-                <p class="bg-light font-weight-bold h4 p-5 rounded text-center">No movies found!</p>
+                <p class="bg-light font-weight-bold h4 p-5 rounded text-center">!لم يتم العثور على أفلام</p>
             @else
                 <!-- Start of Movie Grid -->
                 <div class="row" x-show="layout === 'grid'" x-transition>

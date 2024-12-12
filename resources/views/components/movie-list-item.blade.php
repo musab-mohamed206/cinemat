@@ -27,7 +27,7 @@
 
                     <p>{{ $movie->storyline }}</p>
 
-                    <a href="{{ route('movies.show', $movie->id) }}" class="btn btn-main btn-effect">details</a>
+                    <a href="{{ route('movies.show', $movie->id) }}" class="btn btn-main btn-effect">تفاصيل</a>
                 </div>
 
 
