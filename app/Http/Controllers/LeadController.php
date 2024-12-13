@@ -14,7 +14,7 @@ class LeadController extends Controller
 
         return redirect('/')->with([
             'flash' => 'success',
-            'message' => 'Thanks we\'ll notify you about new offers!',
+            'message' => '!شكراً سنقوم بإعلامك بالعروض الجديدة',
         ]);
     }
 }

@@ -4,13 +4,13 @@
 
         <!-- One "tab" for each step in the form: -->
         <div class="tab">
-            <h2>Reserve seats</h2>
+            <h2>حجز المقاعد</h2>
             @include('components.cinema-view')
         </div>
 
         @auth
         <div class="tab" style="display: none">
-            <h2>Payment details</h2>
+            <h2>تفاصيل الدفع</h2>
             @include('components.payment-view')
         </div>
         @endauth
@@ -18,8 +18,8 @@
 
         <div style="overflow:auto;">
             <div style="float:right;" class="mt-3">
-                <button type="button" id="prevBtn" class="btn btn-red" onclick="nextPrev(-1)">Previous</button>
-                <button type="button" id="nextBtn" class="btn btn-green" onclick="nextPrev(1)">Next</button>
+                <button type="button" id="prevBtn" class="btn btn-red" onclick="nextPrev(-1)">السابق</button>
+                <button type="button" id="nextBtn" class="btn btn-green" onclick="nextPrev(1)">التالي</button>
             </div>
         </div>
 

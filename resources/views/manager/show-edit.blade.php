@@ -1,7 +1,7 @@
 @extends('manager.layout')
 
 @section('content')
-<h1 class="h3 mb-4 text-gray-800">Edit Show</h1>
+<h1 class="h3 mb-4 text-gray-800">تعديل عرض</h1>
 <form action="{{ route('manager.shows.update',$show) }}"
       method="POST">
     @method('PUT')
@@ -10,7 +10,7 @@
     <div class="row">
         @include('components.form-select',[
         'name'=>'movie_id',
-        'label'=>'Movie*',
+        'label'=>'اسم الفيلم',
         'classes'=>'col-6',
         'options'=>$movies,
         'required'=>'required',
@@ -18,7 +18,7 @@
         ])
         @include('components.form-select',[
         'name'=>'room',
-        'label'=>'Room size <sub>Can\'t be edited after creation</sub>',
+        'label'=>'حجم الصالة',
         'classes'=>'col-6',
         'options'=>$rooms,
         'required'=>'disabled',
@@ -29,7 +29,7 @@
     <div class="row">
         @include('components.form-date',[
         'name'=>'date',
-        'label'=>'Show Date*',
+        'label'=>'تاريخ العرض',
         'classes'=>'col-6',
         'value'=>$show->date->toDateString(),
         'required'=>'required',
@@ -38,7 +38,7 @@
         @include('components.form-input',[
         'name'=>'price',
         'type'=>'number',
-        'label'=>'Price ('.config('app.currency').')*',
+        'label'=>'السعر ('.config('app.currency').')',
         'classes'=>'col-6',
         'value'=>$show->price,
         'required'=>'required',
@@ -49,14 +49,14 @@
     <div class="row">
         @include('components.form-time',[
         'name'=>'start_time',
-        'label'=>'Start Time*',
+        'label'=>'بداية العرض',
         'classes'=>'col-6',
         'value'=>$show->start_time->format('H:i'),
         'required'=>'required',
         ])
         @include('components.form-time',[
         'name'=>'end_time',
-        'label'=>'End Time*',
+        'label'=>'نهاية العرض',
         'classes'=>'col-6',
         'value'=>$show->end_time->format('H:i'),
         'required'=>'required',
@@ -68,7 +68,7 @@
                type="reset">
         <input class="btn btn-success m-2"
                type="submit"
-               value="Update">
+               value="تحديث">
     </div>
 </form>
 @include('components.flash-message')

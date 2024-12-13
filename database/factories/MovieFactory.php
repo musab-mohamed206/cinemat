@@ -23,7 +23,7 @@ class MovieFactory extends Factory
             'language' => strtoupper($this->faker->languageCode()),
             'release_date' => $this->faker->dateTime(),
             'director' => $this->faker->word(),
-            'maturity_rating' => $this->faker->randomElement(['PG-13', 'NC-17', 'R', 'G']),
+            'maturity_rating' => $this->faker->randomElement(['PG-13', 'NC-18', 'R', 'G']),
             'running_time' => $this->faker->time('H:i:s', '+2 hours'),
         ];
     }

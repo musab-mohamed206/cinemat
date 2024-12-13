@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     protected $fillable = ['title'];
-    const CATEGORIES = ['Action', 'Drama', 'Comedy', 'Romance', 'Horror'];
+    const CATEGORIES = ['اكشن', 'دراما', 'كوميدي', 'رومانسي', 'رعب'];
     use HasFactory;
 }

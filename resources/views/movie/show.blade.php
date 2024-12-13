@@ -31,7 +31,7 @@
                             <li>{{ $movie->release_date->format('d M Y') }}</li>
                         </ul>
 
-                        <a href="#reserve-now" class="btn btn-main btn-effect">Get tickets</a>
+                        <a href="#reserve-now" class="btn btn-main btn-effect">حجز تذاكر</a>
                         <a href="#" class="btn rate-movie"><i class="icon-heart"></i></a>
 
                         <div class="rating mt10">
@@ -60,24 +60,24 @@
 
                         <!-- Storyline -->
                         <div class="storyline">
-                            <h3 class="title">Storyline</h3>
+                            <h3 class="title">نبذة عن الفيلم</h3>
 
                             <p>{{ $movie->storyline }}</p>
                         </div>
 
                         <!-- Shows -->
                         <div class="movie-media mt50">
-                            <h3 id="reserve-now" class="title">Reserve your ticket!</h3>
+                            <h3 id="reserve-now" class="title">!احجز تذكرتك</h3>
                             {{-- {{ ddd($shows->first()->date) }} --}}
                             @if ($shows->isNotEmpty())
                                 <table class="table-responsive showtime-table table table-striped table-hover">
                                     <thead class="thead-dark">
                                         <tr>
-                                            <th scope="col">Date</th>
-                                            <th scope="col">Start time</th>
-                                            <th scope="col">End time</th>
-                                            <th scope="col">Ticket price</th>
-                                            <th scope="col">Remaining seats</th>
+                                            <th scope="col">التاريخ</th>
+                                            <th scope="col">وقت بداية العرض</th>
+                                            <th scope="col">وقت نهاية العرض</th>
+                                            <th scope="col">سعر التذكرة</th>
+                                            <th scope="col">المقاعد المتبقية</th>
                                             <th scope="col"></th>
                                         </tr>
                                     </thead>
@@ -92,7 +92,7 @@
                                             </td>
                                             <td><a href="#reservation-popup"
                                                     class="btn btn-second btn-effect open-reservation-popup"
-                                                    onclick="populateUI({{ $show->id . ',\'' . $show->date . '\',' . $show->price . ',' . (auth()->check() ? 'true' : 'false') }})">Reserve</a>
+                                                    onclick="populateUI({{ $show->id . ',\'' . $show->date . '\',' . $show->price . ',' . (auth()->check() ? 'true' : 'false') }})">حجز</a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -100,8 +100,7 @@
                                 @include('components.reservation-modal')
                             @else
                                 <div class="bg-light p-3 font-weight-bold rounded text-center">
-                                    There are current no shows for this movie, check
-                                    back later!
+                                   لايوجد عروض حالية للفيلم تحقق مجدداً في وقت لاحق
                                 </div>
                             @endif
                         </div>
@@ -117,19 +116,19 @@
 
                         <!-- Start of Details Widget -->
                         <aside class="widget widget-movie-details">
-                            <h3 class="title">Details</h3>
+                            <h3 class="title">تفاصيل</h3>
 
                             <ul>
-                                <li><strong>Release date:
+                                <li><strong>:تاريخ الإطلاق
                                     </strong>{{ $movie->release_date->toFormattedDateString() }}
                                 </li>
-                                <li><strong>Director:
+                                <li><strong>:المخرج
                                     </strong>{{ $movie->director }}</li>
-                                <li><strong>Language:
+                                <li><strong>:اللغة
                                     </strong>{{ $movie->language }}</li>
-                                <li><strong>Maturity rating:
+                                <li><strong>:الفئة العمرية
                                     </strong>{{ $movie->maturity_rating }}</li>
-                                <li><strong>Running time:
+                                <li><strong>:مدة العرض
                                     </strong>{{ $movie->running_time->format('G \h i\m\i\n') }}
                                 </li>
                             </ul>
@@ -154,7 +153,7 @@
             <!-- Start of row -->
             <div class="row">
                 <div class="col-md-8 col-sm-12">
-                    <h2 class="title">People who liked this also liked...</h2>
+                    <h2 class="title">...نال إعجاب الآخرين أيضاً</h2>
                 </div>
             </div>
             <!-- End of row -->

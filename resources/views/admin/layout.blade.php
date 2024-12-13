@@ -16,7 +16,7 @@
     <!-- ===== Favicon ===== -->
     <link rel="shortcut icon" href={{ asset('images/branding/logos/favicon.png') }} type="image/x-icon">
 
-    <title>{{ config('app.name') }} | Admin Panel</title>
+    <title>{{ config('app.name') }} | لوحة المدير</title>
 
     <!-- Custom fonts for this template-->
     <link rel="stylesheet" href="{{ asset('css/font-awesome-all.css') }}">
@@ -49,25 +49,25 @@
             <li class="nav-item {{ \Request::route()->getName() === 'admin.dashboard' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('admin.dashboard') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span>لوحة التحكم</span></a>
             </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <div class="sidebar-heading">Users</div>
+            <div class="sidebar-heading">المستخدمين</div>
 
             <li class="nav-item {{ \Request::route()->getName() === 'users.index' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('users.index') }}">
                     <i class="fas fa-fw fa-users"></i>
-                    <span>View Users</span></a>
+                    <span>عرض المستخدمين</span></a>
             </li>
 
             <li class="nav-item {{ \Request::route()->getName() === 'users.manager-requests' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('users.manager-requests') }}">
                     <i class="fas fa-fw fa-user-tie"></i>
-                    <span>Manager Requests</span></a>
+                    <span>طلبات المسؤول</span></a>
             </li>
 
             <hr class="sidebar-divider d-none d-md-block">
@@ -123,7 +123,7 @@
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
                                         <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
+                                            placeholder="...البحث عن" aria-label="Search"
                                             aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button">
@@ -147,7 +147,7 @@
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
-                                    Alerts Center
+                                    مركز الإشعارات
                                 </h6>
                                 @foreach ($requests->take(5) as $request)
                                     <a class="dropdown-item d-flex align-items-center"
@@ -160,13 +160,12 @@
                                         <div>
                                             <div class="small text-gray-500">
                                                 {{ $request->created_at->diffForHumans() }}</div>
-                                            <span class="font-weight-bold">{{ $request->username }} has requested to
-                                                become a manager.</span>
+                                            <span class="font-weight-bold">{{ $request->username }} يقدم طلب ليصبح مسؤول</span>
                                         </div>
                                     </a>
                                 @endforeach
                                 <a class="dropdown-item text-center small text-gray-500"
-                                    href="{{ route('users.manager-requests') }}">Show All Alerts</a>
+                                    href="{{ route('users.manager-requests') }}">عرض كل الإشعارات</a>
                             </div>
                         </li>
 
@@ -186,17 +185,17 @@
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="{{ route('users.manager-requests') }}">
                                     <i class="fas fa-user-tie fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Manager Requests
+                                    طلبات المسؤول
                                 </a>
                                 <a class="dropdown-item" href="{{ route('users.index') }}">
                                     <i class="fas fa-users fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Users Overview
+                                    المستخدمين عامة
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal"
                                     data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                    الخروج
                                 </a>
                             </div>
                         </li>
@@ -221,7 +220,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; {{ config('app.name') }} 2021</span>
+                        <span>CopyFOR &copy; {{ config('app.name') }} 2024</span>
                     </div>
                 </div>
             </footer>
@@ -244,18 +243,18 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">جاهز للخروج؟</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">اختر "خروج" إذا كنت جاهز لإنهاء الجلسة الحالية</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">إلغاء</button>
                     <form id="logout_form" method="POST" action="{{ route('logout') }}">
                         @csrf
                         <a class="btn btn-primary text-white" href="javascript:{}"
-                            onclick="document.getElementById('logout_form').submit();">Logout</a>
+                            onclick="document.getElementById('logout_form').submit();">خروج</a>
                     </form>
                 </div>
             </div>

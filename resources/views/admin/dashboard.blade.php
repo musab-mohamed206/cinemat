@@ -1,7 +1,7 @@
 @extends('admin.layout')
 
 @section('content')
-    <h1 class="h3 mb-4 text-gray-800">Dashboard</h1>
+    <h1 class="h3 mb-4 text-gray-800">لوحة التحكم</h1>
     <div class="row">
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Movies</div>
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">الأفلام</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $numOfMovies }}</div>
                         </div>
                         <div class="col-auto">
@@ -25,7 +25,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Shows</div>
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">العروض</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $numOfShows }}</div>
                         </div>
                         <div class="col-auto">
@@ -41,7 +41,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Customers</div>
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">العملاء</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $numOfCustomers }}</div>
                         </div>
                         <div class="col-auto">
@@ -58,7 +58,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Manager Requests</div>
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">طلبات المسؤول</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $managerRequestsCount }}</div>
                         </div>
                         <div class="col-auto">
@@ -76,7 +76,7 @@
         <div class="col-xl-8 col-lg-7">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Manager Requests</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">طلبات المسؤول</h6>
                 </div>
                 <div class="card-body">
                     <div class="chart-bar">
@@ -91,7 +91,7 @@
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Users Breakdown</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">هيكل المستخدمين</h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -100,13 +100,13 @@
                     </div>
                     <div class="mt-4 text-center small">
                         <span class="mr-2">
-                            <i class="fas fa-circle text-primary"></i> Admin
+                            <i class="fas fa-circle text-primary"></i> مدير
                         </span>
                         <span class="mr-2">
-                            <i class="fas fa-circle text-success"></i> Manger
+                            <i class="fas fa-circle text-success"></i> مسؤول
                         </span>
                         <span class="mr-2">
-                            <i class="fas fa-circle text-info"></i> Customers
+                            <i class="fas fa-circle text-info"></i> عملاء
                         </span>
                     </div>
                 </div>
@@ -137,7 +137,7 @@
         var myPieChart = new Chart(pieCtx, {
             type: 'doughnut',
             data: {
-                labels: ["Admin", "Manager", "Customer"],
+                labels: ["مدير", "مسؤول","عميل"],
                 datasets: [{
                     data: [@json($adminUsers), @json($managerUsers),
                         @json($customerUsers)
@@ -170,7 +170,7 @@
         var myBarChart = new Chart(barCtx, {
             type: 'bar',
             data: {
-                labels: ["Managers", "Customers", "Manager Requests"],
+                labels: ["المسؤول", "عملاء", "طلبات المسؤول"],
                 datasets: [{
                     label: "Count",
                     backgroundColor: "#4e73df",

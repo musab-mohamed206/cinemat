@@ -27,8 +27,8 @@
 
             <div class="row justify-content-center">
                 <div class="col-md-7 text-center">
-                    <h2 class="title">How it works?</h2>
-                    <h6 class="subtitle">Feeling confused? start here.</h6>
+                    <h2 class="title">كيف تستمتع معنا؟</h2>
+                    <h6 class="subtitle">تشعر بالحيرة؟ إبدا من هنا</h6>
                 </div>
             </div>
 
@@ -37,31 +37,28 @@
                 <div class="col-md-6 col-sm-12">
                     <div class="icon-box2">
                         <i class="fa fa-film"></i>
-                        <h4 class="title">Pick your movie</h4>
-                        <p>Browse our extensive and exciting collection of movies. Still don't know what to watch? take a
-                            look at our <a href={{ route('movies.index') }} class="text-primary">recommendations.</a></p>
+                        <h4 class="title">اختر فيلمك</h4>
+                        <p>تصفح مجموعتنا الواسعة والمثيرة من الأفلام مازلت لا تعرف ماذا تشاهد؟ ألق نظرة على <a href={{ route('movies.index') }} class="text-primary">توصياتنا.</a></p>
                     </div>
 
                     <div class="icon-box2">
                         <i class="fa fa-ticket"></i>
-                        <h4 class="title">Reserve your ticket</h4>
-                        <p>Reserve your ticket to your favourite movie!</p>
+                        <h4 class="title">احجز تذكرتك</h4>
+                        <p>احجز تذكرتك الأن لفيلمك المفضل</p>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-sm-12">
                     <div class="icon-box2">
                         <i class="icon-login"></i>
-                        <h4 class="title">Register</h4>
-                        <p>Register your account to reserve and pay for tickets. Also to stay up to date with the latest
-                            offers and news.</p>
+                        <h4 class="title">إنشاء حساب؟</h4>
+                        <p>سجل في موقعنا لحجز التذاكر ودفع ثمنها وللبقاء على إطلاع بأحدث العروض و الأخبار</p>
                     </div>
 
                     <div class="icon-box2">
                         <i class="icon-heart"></i>
-                        <h4 class="title">Enjoy!</h4>
-                        <p>Enjoy your movie at one of our cinema rooms, order snacks while you're at it. Your convinence is
-                            our priority.</p>
+                        <h4 class="title">!استمتع</h4>
+                        <p>استمتع بمشاهدة فيلمك في إحدى قاعاتنا واطلب وجبات خفيفة أثناء تواجدك في السينما,فرحتك هي أولويتنا</p>
                     </div>
                 </div>
 
@@ -77,8 +74,8 @@
             <!-- Start of row -->
             <div class="row justify-content-center">
                 <div class="col-md-7 text-center">
-                    <h2 class="title">Newest Movies</h2>
-                    <h6 class="subtitle">View our latest movies collection.</h6>
+                    <h2 class="title">أحدث أفلامنا</h2>
+                    <h6 class="subtitle">شاهد احدث مجموعة من أفلامنا</h6>
                 </div>
             </div>
             <!-- End of row -->
@@ -92,7 +89,7 @@
         <!-- End of Latest Releases Slider -->
 
         <div class="text-center pt-3">
-            <a class="btn btn-main btn-effect" href="{{ route('movies.index') }}">See All Movies</a>
+            <a class="btn btn-main btn-effect" href="{{ route('movies.index') }}">عرض كل الأفلام</a>
         </div>
     </section>
     <!-- =============== END OF LATEST RELEASES SECTION =============== -->
@@ -106,15 +103,15 @@
 
             <div class="col-md-6 col-sm-12 bg-white">
                 <div class="features-wrapper">
-                    <h3 class="title">Watch all newest Movies once they get released!</h3>
+                    <h3 class="title"> !شاهد جميع الأفلام الجديدة بمجرد صدورها</h3>
                     @guest
-                        <p>Sign up or register now to reserve you own tickets. And get notified on new offers and news!</p>
-                        <a class="btn btn-main btn-effect" href="{{ route('register') }}">Register</a>
+                        <p>!اشترك أو سجل الأن لحجز تذاكرك الخاصة واحصل على إشعار بالعروض الجديدة</p>
+                        <a class="btn btn-main btn-effect" href="{{ route('register') }}">للإشتراك</a>
                     @endguest
 
                     @auth
-                        <p>Start reserving your tickets to enjoy the latest and greatest movies!</p>
-                        <a class="btn btn-main btn-effect" href="{{ route('movies.index') }}">Shows</a>
+                        <p>ابدأ بحجز تذاكرك واستمتع بأحدث وأروع الأفلام</p>
+                        <a class="btn btn-main btn-effect" href="{{ route('movies.index') }}">عرض الأفلام</a>
                     @endauth
                 </div>
             </div>
@@ -131,13 +128,13 @@
             <div class="row justify-content-center">
                 <div class="col-md-7 text-center">
                     @guest
-                        <h2 class="title">Join Cinemat Now!</h2>
-                        <h6 class="subtitle">Enter your email to be notified about any news and new offers!</h6>
+                        <h2 class="title">!الإنضمام إلينا الأن</h2>
+                        <h6 class="subtitle">ادخل البريد الإلكتروني لتصبح على إطلاع بكل جديد</h6>
                     @endguest
 
                     @auth
-                        <h2 class="title">Thanks For Using {{ config('app.name') }}!</h2>
-                        <h6 class="subtitle">We hope you enjoy your experience with us!</h6>
+                        <h2 class="title">شكراً لك لمشاركتنا  {{ config('app.name') }}!</h2>
+                        <h6 class="subtitle">!نتمنى أنك استمتعت بمغامرتك معانا</h6>
                     @endauth
                 </div>
             </div>
@@ -156,9 +153,9 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <input type="email" name="email" class="form-control" id="email"
-                                        placeholder="Your Email" autocomplete="off">
+                                        placeholder="ادخل بريدك الإلكتروني" autocomplete="off">
                                     <label for="email"></label>
-                                    <button type="submit" class="btn btn-main btn-effect">Subscribe</button>
+                                    <button type="submit" class="btn btn-main btn-effect">!انضم إلينا</button>
                                 </div>
                             </div>
                         </form>

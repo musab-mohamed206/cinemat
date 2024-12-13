@@ -17,7 +17,7 @@
                         data-fontsize="['60','50','40','30']" data-lineheight="['60','50','40','30']"
                         data-whitespace="nowrap"
                         data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:0;s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                        style="z-index: 5; color: #fff; font-weight: 900;">WELCOME TO CINEMAT</div>
+                        style="z-index: 5; color: #fff; font-weight: 900;">CINEMATمرحبا ف</div>
 
 
                     <!-- LAYER NR. 2 -->
@@ -33,7 +33,7 @@
                                 <div class="col-md-8 col-sm-10 col-12">
                                     <div class="form-group">
                                         <input name="search" type="text" id="search" value=""
-                                            class="form-control" placeholder="Enter Movies or Series Title">
+                                            class="form-control" placeholder="ادخل اسم فيلمك">
                                         <button type="submit" class="btn btn-main btn-effect"><i
                                                 class="fa fa-search"></i></button>
                                     </div>
@@ -51,7 +51,7 @@
                         data-lineheight="['22']" data-whitespace="nowrap"
                         data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:0;s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                         style="z-index: 5; color: #fff; font-weight: 400;">
-                        Have a look at our top rated <br />Movies and TV Shows!
+                        الأعلى تقييم <br />في الأفلام
                     </div>
 
 

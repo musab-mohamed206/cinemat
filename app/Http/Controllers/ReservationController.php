@@ -67,7 +67,13 @@ class ReservationController extends Controller
      */
     public function show(Reservation $reservation)
     {
-        //
+        $reservation->load(['show' => function ($query) {
+            $query->with(['movie', 'room']);
+        }, 'user']);
+        // dd($reservation);
+        return view('user.show_reservations', [
+            'reservation' => $reservation
+        ]);
     }
 
     /**
@@ -110,7 +116,7 @@ class ReservationController extends Controller
 
         return redirect('dashboard')->with([
             'flash' => 'success',
-            'message' => 'Successfully canceled your reservation. You will be refunded the ticket\'s amount.',
+            'message' => 'تم إلغاء الحجز بنجاح,سيتم إسترداد قيمة التذاكر التي قمت بحجزها',
         ]);
     }
 }

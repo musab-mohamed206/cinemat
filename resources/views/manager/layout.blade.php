@@ -21,7 +21,7 @@
     <!-- ===== Favicon ===== -->
     <link rel="shortcut icon" href={{ asset('images/branding/logos/favicon.png') }} type="image/x-icon">
 
-    <title>{{ config('app.name') }} | Admin Panel</title>
+    <title>{{ config('app.name') }} | لوحة المسؤول</title>
 
     <!-- Custom fonts for this template-->
     <link rel="stylesheet" href="{{ asset('css/font-awesome-all.css') }}">
@@ -54,29 +54,29 @@
             <li class="nav-item {{ Route::is('manager.dashboard') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('manager.dashboard') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span>لوحة التحكم</span></a>
             </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <div class="sidebar-heading">Movies</div>
+            <div class="sidebar-heading">الأفلام</div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item {{ Route::is('manager.movies.*') ? 'active' : '' }}">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMovie"
                     aria-expanded="true" aria-controls="collapseMovie">
                     <i class="fas fa-fw fa-film"></i>
-                    <span>Movies</span>
+                    <span>الأفلام</span>
                 </a>
                 <div id="collapseMovie" class="collapse {{ Route::is('manager.movies.*') ? 'show' : '' }}"
                     aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item {{ Route::is(['manager.movies.index', 'manager.movies.show', 'manager.movies.edit']) ? 'active' : '' }}"
-                            href="{{ route('manager.movies.index') }}">View Movies</a>
+                            href="{{ route('manager.movies.index') }}">عروض الأفلام</a>
                         <a class="collapse-item {{ Route::is('manager.movies.create') ? 'active' : '' }}"
-                            href="{{ route('manager.movies.create') }}">Add Movie</a>
+                            href="{{ route('manager.movies.create') }}">إضافة فيلم</a>
                     </div>
                 </div>
             </li>
@@ -85,24 +85,22 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <div class="sidebar-heading">Shows</div>
+            <div class="sidebar-heading">العروض</div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item {{ Route::is('manager.shows.*') ? 'active' : '' }}">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseShow"
                     aria-expanded="true" aria-controls="collapseShow">
                     <i class="fas fa-fw fa-compact-disc"></i>
-                    <span>Show</span>
+                    <span>العرض</span>
                 </a>
                 <div id="collapseShow" class="collapse {{ Route::is('manager.shows.*') ? 'show' : '' }}"
                     aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item {{ Route::is(['manager.shows.index', 'manager.shows.edit', 'manager.shows.show']) ? 'active' : '' }}"
-                            href="{{ route('manager.shows.index') }}">View
-                            Shows</a>
+                            href="{{ route('manager.shows.index') }}">عرض العروض</a>
                         <a class="collapse-item {{ Route::is('manager.shows.create') ? 'active' : '' }}"
-                            href="{{ route('manager.shows.create') }}">Add
-                            Show</a>
+                            href="{{ route('manager.shows.create') }}">إضافة عرض</a>
                     </div>
                 </div>
             </li>
@@ -137,7 +135,7 @@
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
                             <input type="text" class="form-control bg-light border-0 small"
-                                placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                placeholder="...البحث عن" aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
                                     <i class="fas fa-search fa-sm"></i>
@@ -161,7 +159,7 @@
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
                                         <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
+                                            placeholder="...البحث عن" aria-label="Search"
                                             aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button">
@@ -185,7 +183,7 @@
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
-                                    Upcoming Shows Alerts
+                                    تنبيه بالعروض القادمة
                                 </h6>
                                 @foreach ($shows->take(5) as $show)
                                     <a class="dropdown-item d-flex align-items-center"
@@ -199,15 +197,13 @@
                                             <div class="small text-gray-500">
                                                 {{ $show->date->diffForHumans() }}
                                             </div>
-                                            <span class="font-weight-bold">Upcoming
-                                                show for
+                                            <span class="font-weight-bold">العرض القادم
                                                 {{ $show->movie->title }}.</span>
                                         </div>
                                     </a>
                                 @endforeach
                                 <a class="dropdown-item text-center small text-gray-500"
-                                    href="{{ route('manager.shows.index') }}">Show
-                                    All Alerts</a>
+                                    href="{{ route('manager.shows.index') }}">عرض كل الإشعارات</a>
                             </div>
                         </li>
 
@@ -227,17 +223,17 @@
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="{{ route('manager.movies.index') }}">
                                     <i class="fas fa-user-tie fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Movies
+                                    الأفلام
                                 </a>
                                 <a class="dropdown-item" href="{{ route('manager.shows.index') }}">
                                     <i class="fas fa-users fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Shows
+                                    عروض
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal"
                                     data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                    خروج
                                 </a>
                             </div>
                         </li>
@@ -262,7 +258,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; {{ config('app.name') }}
+                        <span>CopyFOR &copy; {{ config('app.name') }}
                             2021</span>
                     </div>
                 </div>
@@ -286,19 +282,18 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">مستعد للخروج؟</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready
-                    to end your current session.</div>
+                <div class="modal-body">اضغط "خروج" إذا كنت جاهز لإنهاء الجلسة الحالية</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">إلغاء</button>
                     <form id="logout_form" method="POST" action="{{ route('logout') }}">
                         @csrf
                         <a class="btn btn-primary text-white" href="javascript:{}"
-                            onclick="document.getElementById('logout_form').submit();">Logout</a>
+                            onclick="document.getElementById('logout_form').submit();">خروج</a>
                     </form>
                 </div>
             </div>
