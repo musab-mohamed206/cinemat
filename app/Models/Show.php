@@ -17,6 +17,7 @@ class Show extends Model
         'start_time',
         'end_time',
         'remaining_seats',
+        'hall_id',
     ];
 
     protected $casts = [

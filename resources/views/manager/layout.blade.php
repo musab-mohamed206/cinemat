@@ -4,10 +4,7 @@
 @php
     use Illuminate\Support\Facades\Route;
     use Carbon\Carbon;
-    $shows = \App\Models\Show::with('movie')
-        ->where('date', '>', Carbon::now())
-        ->orderBy('date')
-        ->get();
+    $shows = \App\Models\Show::with('movie')->where('date', '>', Carbon::now())->orderBy('date')->get();
 @endphp
 
 <head>
@@ -57,6 +54,48 @@
                     <span>لوحة التحكم</span></a>
             </li>
 
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">السنمات</div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item {{ Route::is('manager.cinema.*') ? 'active' : '' }}">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Cinema"
+                    aria-expanded="true" aria-controls="Cinema">
+                    <i class="fas fa-fw fa-film"></i>
+                    <span>السنمات</span>
+                </a>
+                <div id="Cinema" class="collapse {{ Route::is('manager.movies.*') ? 'show' : '' }}"
+                    aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item {{ Route::is(['manager.movies.index', 'manager.movies.show', 'manager.movies.edit']) ? 'active' : '' }}"
+                            href="{{ route('manager.cinema.index') }}">عروض السنمات</a>
+                        <a class="collapse-item {{ Route::is('manager.movies.create') ? 'active' : '' }}"
+                            href="{{ route('manager.cinema.create') }}">إضافة سنمة</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Divider -->
+
+            <li class="nav-item {{ Route::is('manager.hall.*') ? 'active' : '' }}">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Hall"
+                    aria-expanded="true" aria-controls="Hall">
+                    <i class="fas fa-fw fa-film"></i>
+                    <span>القاعات</span>
+                </a>
+                <div id="Hall" class="collapse {{ Route::is('manager.movies.*') ? 'show' : '' }}"
+                    aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item {{ Route::is(['manager.movies.index', 'manager.movies.show', 'manager.movies.edit']) ? 'active' : '' }}"
+                            href="{{ route('manager.hall.index') }}">عروض القاعاث</a>
+                        <a class="collapse-item {{ Route::is('manager.movies.create') ? 'active' : '' }}"
+                            href="{{ route('manager.hall.create') }}">إضافة قاعة</a>
+                    </div>
+                </div>
+            </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
 

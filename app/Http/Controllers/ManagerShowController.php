@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Hall;
 use App\Models\Movie;
 use App\Models\Room;
 use App\Models\Show;
@@ -32,6 +33,8 @@ class ManagerShowController extends Controller
         return view('manager.show-create', [
             'movies' => Movie::select(['id', 'title'])->get()->pluck('title', 'id'),
             'rooms' => Room::select(['id', 'size'])->get()->pluck('size', 'id'),
+            'halls' => Hall::select(['id', 'name'])->get()->pluck('name', 'id'),
+
         ]);
     }
 
@@ -91,6 +94,7 @@ class ManagerShowController extends Controller
             'show' => $show,
             'movies' => Movie::select(['id', 'title'])->get()->pluck('title', 'id'),
             'rooms' => Room::select(['id', 'size'])->get()->pluck('size', 'id'),
+            'halls' => Hall::select(['id', 'name'])->get()->pluck('name', 'id'),
         ]);
     }
 
@@ -141,4 +145,3 @@ class ManagerShowController extends Controller
         ]);
     }
 }
-        

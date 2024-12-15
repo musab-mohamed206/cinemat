@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\CinemaController;
+use App\Http\Controllers\HallController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\ManagerMovieController;
 use App\Http\Controllers\ManagerShowController;
@@ -57,13 +59,14 @@ Route::post('leads', [LeadController::class, 'store'])->middleware('guest')->nam
 
 // User Movies
 Route::resource('movies', UserMovieController::class, ['only' => [
-    'index', 'show',
+    'index',
+    'show',
 ]]);
 
 // User Shows
 Route::get('json/shows/{show}', function (Show $show) {
     $ret = $show->load('room')->toArray();
-    $ret['reservations'] = $show->reservationsSeats()->map(fn ($i) => intval($i));
+    $ret['reservations'] = $show->reservationsSeats()->map(fn($i) => intval($i));
     return $ret;
 });
 
@@ -86,6 +89,15 @@ Route::group(['prefix' => 'manager', 'middleware' => 'can:manager', 'as' => 'man
     Route::get('dashboard', [ManagerMovieController::class, 'dashboard'])->name('dashboard');
 });
 
+Route::group(['prefix' => 'manager', 'middleware' => 'can:manager', 'as' => 'manager.'], function () {
+    Route::resource('cinema', CinemaController::class);
+    Route::get('dashboard', [ManagerMovieController::class, 'dashboard'])->name('dashboard');
+});
+
+Route::group(['prefix' => 'manager', 'middleware' => 'can:manager', 'as' => 'manager.'], function () {
+    Route::resource('hall', HallController::class);
+    Route::get('dashboard', [ManagerMovieController::class, 'dashboard'])->name('dashboard');
+});
 // Manager Shows
 Route::group(['prefix' => 'manager', 'middleware' => 'can:manager', 'as' => 'manager.'], function () {
     Route::resource('shows', ManagerShowController::class);
